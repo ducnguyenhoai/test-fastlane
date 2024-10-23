@@ -32,5 +32,10 @@ jobs:
           bundle install
 
       - name: Build APK
+        env:
+          KEYSTORE_PATH: '${{ github.workspace }}/keystore_for_testing'
+          KEYSTORE_PASSWORD: '123456aA@'
+          KEY_ALIAS: 'key0'
+          KEY_PASSWORD: '123456aA@'
         run: |
           bundle exec fastlane build_apk
