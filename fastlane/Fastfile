@@ -2,7 +2,9 @@ default_platform(:android)
 
 platform :android do
   desc "Build the APK with signing"
-  lane :build_apk do
+  lane :build_and_distribute do
+    puts "Keystore Password: #{ENV["KEYSTORE_PASSWORD"]}"
+    puts "Key Password: #{ENV['KEY_PASSWORD']}"
     gradle(
       task: "assembleRelease",
       properties: {
