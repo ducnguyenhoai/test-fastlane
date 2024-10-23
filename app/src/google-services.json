@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "489199092712",
+    "project_id": "testfastlane-5d65f",
+    "storage_bucket": "testfastlane-5d65f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489199092712:android:e883b6d30cc31b8fd75a5d",
+        "android_client_info": {
+          "package_name": "com.metanode.testfastlane"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKrVWxRrlXOuyIpQZQsjrc8C4eNzalqB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
