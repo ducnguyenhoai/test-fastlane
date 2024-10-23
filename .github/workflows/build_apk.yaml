@@ -10,6 +10,7 @@ on:
 
 jobs:
   build:
+    environment: fastlane
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -35,8 +36,8 @@ jobs:
         env:
           KEYSTORE_PATH: '${{ github.workspace }}/keystore_for_testing'
           KEY_ALIAS: 'key0'
-          KEYSTORE_PASSWORD: ${{ secrets.fastlane.KEYSTORE_PASSWORD }}
-          KEY_PASSWORD: ${{ secrets.fastlane.KEY_PASSWORD }}
-          FIREBASE_TOKEN: ${{ secrets.fastlane.FIREBASE_TOKEN }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           bundle exec fastlane build_and_distribute
