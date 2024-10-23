@@ -34,5 +34,4 @@ jobs:
 
       - name: Build APK
         run: |
-#          cd android
           bundle exec fastlane build_apk
