@@ -3,7 +3,7 @@ default_platform(:android)
 platform :android do
   desc "Build the APK with signing"
   lane :build_apk do
-    keystore_path = "/Users/hoaiduc/Projects/iBe/TestFastlane/keystore_for_testing"
+    keystore_path = "keystore_for_testing"
     keystore_alias = "keystore_for_testing"
     keystore_password = "123456aA@"
     key_alias = "key0"
