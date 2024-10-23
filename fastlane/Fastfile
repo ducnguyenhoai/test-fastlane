@@ -18,7 +18,7 @@ platform :android do
           app: "1:489199092712:android:e883b6d30cc31b8fd75a5d",
           firebase_cli_token: ENV["FIREBASE_TOKEN"],
           release_notes: "Test set group",
-          group: "general",
+          groups: "general",
           apk_path: "app/build/outputs/apk/release/app-release.apk"
         )
   end

@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - deploy_for_testing
-  pull_request:
-    branches:
-      - deploy_for_testing
 
 jobs:
   build:
