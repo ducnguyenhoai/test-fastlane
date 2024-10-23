@@ -3,19 +3,13 @@ default_platform(:android)
 platform :android do
   desc "Build the APK with signing"
   lane :build_apk do
-    keystore_path = "keystore_for_testing"
-    keystore_alias = "keystore_for_testing"
-    keystore_password = "123456aA@"
-    key_alias = "key0"
-    key_password = "123456aA@"
-
     gradle(
       task: "assembleRelease",
       properties: {
-        "android.injected.signing.store.file" => keystore_path,
-        "android.injected.signing.store.password" => keystore_password,
-        "android.injected.signing.key.alias" => key_alias,
-        "android.injected.signing.key.password" => key_password
+        "android.injected.signing.store.file" => "./keystore_for_testing",
+        "android.injected.signing.store.password" => "123456aA@",
+        "android.injected.signing.key.alias" => "key0",
+        "android.injected.signing.key.password" => "123456aA@"
       }
     )
   end
