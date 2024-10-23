@@ -2,7 +2,7 @@ default_platform(:android)
 
 platform :android do
   desc "Build the APK with signing"
-  lane :build_and_distribute do
+  lane :deploy_for_testing do
     puts "Keystore Password: #{ENV["KEYSTORE_PASSWORD"]}"
     puts "Key Password: #{ENV['KEY_PASSWORD']}"
     gradle(
@@ -17,7 +17,6 @@ platform :android do
     firebase_app_distribution(
           app: "1:489199092712:android:e883b6d30cc31b8fd75a5d",
           firebase_cli_token: ENV["FIREBASE_TOKEN"],
-          testers: "hoaiducdc@gmail.com",
           release_notes: "New version available!",
           apk_path: "app/build/outputs/apk/release/app-release.apk"
         )

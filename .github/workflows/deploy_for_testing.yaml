@@ -1,12 +1,12 @@
-name: Build APK
+name: Deploy for testing
 
 on:
   push:
     branches:
-      - develop
+      - deploy_for_testing
   pull_request:
     branches:
-      - develop
+      - deploy_for_testing
 
 jobs:
   build:
@@ -40,4 +40,4 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
-          bundle exec fastlane build_and_distribute
+          bundle exec fastlane deploy_for_testing
