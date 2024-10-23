@@ -6,11 +6,18 @@ platform :android do
     gradle(
       task: "assembleRelease",
       properties: {
-        "android.injected.signing.store.file" => ENV["KEYSTORE_PATH"],
-        "android.injected.signing.store.password" => ENV["KEYSTORE_PASSWORD"],
-        "android.injected.signing.key.alias" => ENV["KEY_ALIAS"],
-        "android.injected.signing.key.password" => ENV["KEY_PASSWORD"]
+        "android.injected.signing.store.file" => '${{ github.workspace }}/keystore_for_testing',
+        "android.injected.signing.store.password" => '123456aA@',
+        "android.injected.signing.key.alias" => 'key0',
+        "android.injected.signing.key.password" => '123456aA@'
       }
     )
+    firebase_app_distribution(
+          app: "1:489199092712:android:e883b6d30cc31b8fd75a5d",
+          firebase_cli_token: "1//0g9eRdynSc8qACgYIARAAGBASNwF-L9Ir03X8EB3c1nP1soB3Ii7NOXX3WXLsIfaxKenvCKmlWxchN8C1RrA-uXVhXJX4ylAlPsk",
+          testers: "hoaiducdc@gmail.com",
+          release_notes: "New version available!",
+          apk_path: "app/build/outputs/apk/release/app-release.apk"
+        )
   end
 end
