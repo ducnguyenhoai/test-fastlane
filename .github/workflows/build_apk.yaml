@@ -39,4 +39,4 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
-          bundle exec fastlane build_apk
+          bundle exec fastlane build_and_distribute
